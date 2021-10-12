@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top blue-grey">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLinkActive="active" routerLink="/home">FANS STORE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item mr-sm-3"><a class="nav-link" routerLink="/homepage">TRANG CHỦ</a></li>
+                <li class="nav-item mr-sm-3"><a class="nav-link" routerLink="/product">SẢN PHẨM</a></li>
+                <li class="nav-item mr-sm-3"><a class="nav-link" routerLink="/cateType">LOẠI</a></li>
+                <li class="nav-item"><a class="nav-link" routerLink="/cart">Cart {{countCart()}}</a></li>
+                <!-- <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#!">Register</a>
+                        <a class="dropdown-item" href="#!">Login</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#!">Something else here</a>
+                    </div>
+                </li> --> 
+            </ul>
+          
+        <ul>
+            <li> <input class="mr-5" type="search" placeholder="Nhập từ khóa tìm kiếm" aria-label="Search"> </li>        
+           <!-- <li><button class="btn btn-outline-success " type="submit">Tìm</button></li> -->
+           <li style="margin-top: 9px; margin-left: 1px;"><a class="action-btn"><i class="material-icons" >search</i></a></li>
+
+           <li class="nav-item mr-sm-3" style="margin-top: 3px;" *ngIf="check; else elseBlock"><a class="nav-link" routerLink="/login"><i class="material-icons">person</i></a></li>
+           <ng-template #elseBlock>
+               <li class="nav-item"><a class="nav-link" routerLink="/login" (click)="logout()">{{display()}}</a></li>
+           </ng-template>
+        </ul>
+        <!-- <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+          </form> -->
+        </div>
+    </div>
+</nav>
+<script>
+    window.addEventListener('DOMContentLoaded', event => {
+    // Toggle the side navigation
+    const sidebarToggle = document.body.querySelector('#sidebarToggle');
+    if (sidebarToggle) {
+        // Uncomment Below to persist sidebar toggle between refreshes
+        // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
+        //     document.body.classList.toggle('sb-sidenav-toggled');
+        // }
+        sidebarToggle.addEventListener('click', event => {
+            event.preventDefault();
+            document.body.classList.toggle('sb-sidenav-toggled');
+            localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
+        });
+    }
+});
+</script>

@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<div class="container-fluid">
+    <div class="row">
+        <!-- <div class="col-sm-3" 
+        *ngFor="let product of _productService.products | paginate: { id: 'listing_pagination',
+        itemsPerPage: 5,
+        currentPage: page,
+        totalItems: totalRecords}" 
+        style="padding-bottom: 5%;"> -->
+        <div class="col-sm-3" 
+        *ngFor="let product of products" 
+        style="padding-bottom: 5%;">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="/assets/images/{{product.image}}" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">{{product.name}}</h5>
+                  <p class="card-text">{{product.description}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">{{product.price}}</li>
+                </ul>
+                <!-- <div class="card-body">
+                  <a class="card-link" (click)="addToCart(product)">Add to cart</a>
+                  <a href="#" routerLink="/detail/{{product._id}}" class="card-link">Detail</a>
+                </div> -->
+            </div>
+        </div>
+        <!-- <div>
+          <pagination-controls id= "listing_pagination" max-size="5"  (pageChange)="page = $event"></pagination-controls>
+      </div> -->
+    </div>
+</div>
+

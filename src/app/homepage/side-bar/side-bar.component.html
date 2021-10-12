@@ -1,0 +1,12 @@
+<div class="border-end bg-white" id="sidebar-wrapper">
+    <div class="sidebar-heading border-bottom bg-light " style="text-align:center;">
+        <p>LOẠI</p>
+    </div>
+    <div class="list-group list-group-flush">
+
+        <a class="list-group-item list-group-item-action list-group-item-light p-3" 
+        *ngFor="let cateType of _categoryTypeService.categoryType" 
+        routerLink="/filter/{{cateType._id}}" >{{cateType.name}}</a>
+        <!-- <button (click)="onSave()">Save</button> -->
+    </div>
+</div>
